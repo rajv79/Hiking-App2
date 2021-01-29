@@ -23,21 +23,21 @@
                   <Image url="@../../../../Desktop/logofor%20hinking.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="587.0" fitWidth="309.0" layoutX="10.0" layoutY="10.0">
+            <ImageView fitHeight="606.0" fitWidth="342.0" layoutX="1.0" layoutY="-3.0">
                <image>
-                  <Image url="@../../../../Desktop/ICONS/logofor%20hinking.jpg" />
+                  <Image url="@../../../../Desktop/Resgisterllogo.jpg" />
                </image>
             </ImageView>
          </children></AnchorPane>
    </left>
    <right>
-      <AnchorPane fx:id="usernamefld" prefHeight="600.0" prefWidth="377.0" style="-fx-background-color: Light Blue;" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="usernamefld" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: Light Blue;" BorderPane.alignment="CENTER">
          <children>
-            <TextField layoutX="124.0" layoutY="224.0" prefHeight="25.0" prefWidth="165.0" promptText="username" />
-            <PasswordField layoutX="122.0" layoutY="316.0" prefHeight="25.0" prefWidth="164.0" promptText="password" />
-            <Button layoutX="158.0" layoutY="389.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Registor Now" />
-            <Button layoutX="55.0" layoutY="389.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Login" />
-            <Label layoutX="4.0" layoutY="211.0" prefHeight="40.0" prefWidth="118.0" text="Username">
+            <TextField layoutX="147.0" layoutY="218.0" prefHeight="25.0" prefWidth="165.0" promptText="username" />
+            <PasswordField layoutX="148.0" layoutY="313.0" prefHeight="25.0" prefWidth="164.0" promptText="password" />
+            <Button layoutX="92.0" layoutY="403.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Registor Now" />
+            <Button layoutX="221.0" layoutY="403.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Login" />
+            <Label layoutX="18.0" layoutY="211.0" prefHeight="40.0" prefWidth="118.0" text="Username">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
@@ -46,19 +46,19 @@
                      <stops>
                         <Stop>
                            <color>
-                              <Color red="0.2072819620370865" green="0.2090173214673996" blue="0.3114035129547119" />
+                              <Color red="0.11831275373697281" green="1.0" blue="0.4415980875492096" />
                            </color>
                         </Stop>
                         <Stop offset="1.0">
                            <color>
-                              <Color red="0.7099999785423279" green="1.0" blue="0.7148798108100891" />
+                              <Color red="0.852006196975708" green="1.0" blue="0.01337448600679636" />
                            </color>
                         </Stop>
                      </stops>
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label layoutX="9.0" layoutY="310.0" prefHeight="30.0" prefWidth="106.0" text="Password">
+            <Label layoutX="18.0" layoutY="310.0" prefHeight="30.0" prefWidth="106.0" text="Password">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
@@ -67,7 +67,7 @@
                      <stops>
                         <Stop>
                            <color>
-                              <Color red="0.2072819620370865" green="0.2090173214673996" blue="0.3114035129547119" />
+                              <Color red="0.7853652238845825" green="0.8611111044883728" blue="0.10365226119756699" />
                            </color>
                         </Stop>
                         <Stop offset="1.0">
