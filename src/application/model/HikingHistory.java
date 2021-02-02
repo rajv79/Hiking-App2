@@ -8,8 +8,7 @@ public class HikingHistory {
 	private int date_finshed;
 	private int Time_finshed;
 	private double distance;
-	private double duration;
-	private double average_pace;
+	
 
 	public HikingHistory() {
 		this.Trail_name = "";
@@ -17,36 +16,35 @@ public class HikingHistory {
 		this.Time_Strated = 0;
 		this.date_finshed = 0;
 		this.Time_finshed = 0;
-		this.duration = 0.0;
 		this.distance = 0.0;
-		this.average_pace = 0.0;
+		
 
 	}
 
 	public HikingHistory(String Trail_name, int date_started, int Time_Started, int date_finshed, int Time_finshed,
-			double distance, double duration, double average_pace) {
+			double distance) {
 
 		this.Trail_name = Trail_name;
 		this.date_started = date_started;
 		this.Time_Strated = Time_Started;
 		this.date_finshed = date_finshed;
 		this.Time_finshed = Time_finshed;
-		this.duration = duration;
+		
 		this.distance = distance;
-		this.average_pace = average_pace;
+		
 
 	}
 
 	public String toString() {
 		return ("Name of Trail:" + Trail_name + "Date started :- " + date_started + "Time_Started:-" + Time_Strated
-				+ "datefinshed:-" + date_finshed + "Ditance hike :-" + distance + "duration:-" + duration
-				+ "average_pace:-" + average_pace);
+				+ "datefinshed:-" + date_finshed + "Ditance hike :-" + distance 
+				);
 
 	}
 
 	public HikingHistory deepcopy() {
 		HikingHistory deepcopy = new HikingHistory(Trail_name, date_started, Time_Strated, date_finshed, Time_finshed,
-				distance, duration, average_pace);
+				distance);
 		return deepcopy;
 
 	}
@@ -104,20 +102,7 @@ public class HikingHistory {
 		this.distance = distance;
 	}
 
-	public double getDuration() {
-		return duration;
-	}
+	
 
-	public void setDuration(double duration) {
-		this.duration = duration;
-	}
-
-	public double getAverage_pace() {
-		return average_pace;
-	}
-
-	public void setAverage_pace(double average_pace) {
-		this.average_pace = average_pace;
-	}
-
+	
 }

@@ -13,8 +13,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RegisternowController">
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -135,7 +134,7 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <TextField layoutX="165.0" layoutY="169.0" prefHeight="25.0" prefWidth="193.0" promptText="Firstname" />
+            <TextField fx:id="firstnamefld" layoutX="165.0" layoutY="169.0" prefHeight="25.0" prefWidth="193.0" promptText="Firstname" />
             <Label layoutX="19.0" layoutY="475.0" text="Password">
                <font>
                   <Font size="20.0" />
@@ -157,17 +156,17 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <TextField layoutX="165.0" layoutY="236.0" prefHeight="25.0" prefWidth="198.0" promptText="Last Name" />
-            <TextField layoutX="163.0" layoutY="304.0" prefHeight="25.0" prefWidth="196.0" promptText="Phone Number" />
-            <TextField layoutX="159.0" layoutY="387.0" prefHeight="25.0" prefWidth="204.0" promptText="User Name" />
-            <PasswordField layoutX="164.0" layoutY="475.0" prefHeight="25.0" prefWidth="198.0" promptText="6 character Long" />
+            <TextField fx:id="lastnamefld" layoutX="165.0" layoutY="236.0" prefHeight="25.0" prefWidth="198.0" promptText="Last Name" />
+            <TextField fx:id="pnumberfld" layoutX="163.0" layoutY="304.0" prefHeight="25.0" prefWidth="196.0" promptText="Phone Number" />
+            <TextField fx:id="usernamefld" layoutX="159.0" layoutY="387.0" prefHeight="25.0" prefWidth="204.0" promptText="User Name" />
+            <PasswordField fx:id="passwordfld" layoutX="164.0" layoutY="475.0" prefHeight="25.0" prefWidth="198.0" promptText="6 character Long" />
             <Button layoutX="165.0" layoutY="585.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Save">
                <font>
                   <Font name="System Bold Italic" size="17.0" />
                </font>
             </Button>
             <Label layoutX="67.0" layoutY="129.0" textFill="#fffb02" />
-            <Button layoutX="254.0" layoutY="585.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="63.0" style="-fx-background-color: yellow;" text="Login">
+            <Button fx:id="log" layoutX="254.0" layoutY="585.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="102.0" style="-fx-background-color: yellow;" text="LoginPage">
                <font>
                   <Font name="System Bold Italic" size="14.0" />
                </font>

@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
    <left>
       <AnchorPane prefHeight="600.0" prefWidth="266.0" BorderPane.alignment="CENTER">
          <children>
@@ -31,12 +31,12 @@
          </children></AnchorPane>
    </left>
    <right>
-      <AnchorPane fx:id="usernamefld" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: Light Blue;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: Light Blue;" BorderPane.alignment="CENTER">
          <children>
-            <TextField layoutX="147.0" layoutY="218.0" prefHeight="25.0" prefWidth="165.0" promptText="username" />
-            <PasswordField layoutX="148.0" layoutY="313.0" prefHeight="25.0" prefWidth="164.0" promptText="password" />
-            <Button layoutX="92.0" layoutY="403.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Registor Now" />
-            <Button layoutX="221.0" layoutY="403.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Login" />
+            <TextField fx:id="usernamefld" layoutX="147.0" layoutY="218.0" prefHeight="25.0" prefWidth="165.0" promptText="username" />
+            <PasswordField fx:id="passwordfld" layoutX="148.0" layoutY="313.0" prefHeight="25.0" prefWidth="164.0" promptText="password" />
+            <Button fx:id="registernow" layoutX="92.0" layoutY="403.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Registor Now" />
+            <Button fx:id="loginbtn" layoutX="221.0" layoutY="403.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Login" />
             <Label layoutX="18.0" layoutY="211.0" prefHeight="40.0" prefWidth="118.0" text="Username">
                <font>
                   <Font name="System Bold" size="22.0" />
@@ -79,6 +79,10 @@
                   </LinearGradient>
                </textFill>
             </Label>
+            <Label fx:id="wronglogin" layoutX="57.0" layoutY="136.0" prefHeight="17.0" prefWidth="0.0" textFill="#e51210">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
          </children></AnchorPane>
    </right>
 </BorderPane>
