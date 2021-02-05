@@ -9,89 +9,90 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <left>
-      <AnchorPane fx:id="fishtimefld" prefHeight="600.0" prefWidth="278.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.TrailInformationController">
+   <center>
+      <AnchorPane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <AnchorPane fx:id="fishtimefld" prefHeight="600.0" prefWidth="674.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="32.0" layoutY="14.0" text="Welocme Back !!!" textFill="#e7ff00">
+            <Label layoutX="25.0" layoutY="8.0" textFill="#e7ff00">
                <font>
                   <Font name="System Bold" size="28.0" />
                </font>
             </Label>
-            <Label layoutX="13.0" layoutY="97.0" text="Select Date and Time:" textFill="#daf600">
-               <font>
-                  <Font size="21.0" />
-               </font>
-            </Label>
-            <Label layoutX="1.0" layoutY="161.0" text="Start Date" textFill="#ddff00">
+            <Label layoutX="16.0" layoutY="80.0" text="Start Date" textFill="#ddff00">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="3.0" layoutY="221.0" text="Start Time" textFill="#c5fb00">
+            <Label layoutX="17.0" layoutY="135.0" text="Start Time" textFill="#c5fb00">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutY="262.0" text="Finshed Time" textFill="#c3ff00">
+            <Label layoutX="5.0" layoutY="186.0" text="Finshed Time" textFill="#c3ff00">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="startdatefld" layoutX="104.0" layoutY="159.0" />
-            <TextField fx:id="starttimefld" layoutX="104.0" layoutY="218.0" />
-            <TextField fx:id="finshtime" layoutX="104.0" layoutY="260.0" />
-            <TableView layoutX="2.0" layoutY="325.0" prefHeight="200.0" prefWidth="274.0">
+            <TextField fx:id="startdatefld" layoutX="119.0" layoutY="78.0" promptText="startdate" />
+            <TextField fx:id="starttimefld" layoutX="119.0" layoutY="132.0" promptText="start time" />
+            <TextField fx:id="finshtime" layoutX="119.0" layoutY="184.0" promptText="finshed time" />
+            <TableView fx:id="newinfoview" layoutX="11.0" layoutY="300.0" prefHeight="233.0" prefWidth="460.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn fx:id="trailnamecol" prefWidth="75.0" text="Trailname" />
+                <TableColumn fx:id="difficultycol" prefWidth="75.0" text="difficulty" />
+                  <TableColumn fx:id="trailheadcol" prefWidth="75.0" text="Trailhead" />
+                  <TableColumn fx:id="lengthcol" prefWidth="75.0" text="length" />
+                  <TableColumn fx:id="typecol" prefWidth="75.0" text="type" />
+                  <TableColumn fx:id="startdatecol" prefWidth="75.0" text="startdate" />
               </columns>
             </TableView>
-            <Button layoutX="11.0" layoutY="549.0" mnemonicParsing="false" text="Save" />
-         </children>
-      </AnchorPane>
-   </left>
-   <center>
-      <AnchorPane prefHeight="600.0" prefWidth="366.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
-         <children>
-            <Label layoutX="80.0" layoutY="14.0" text="ADD New Trail" textFill="#23ff0a">
-               <font>
-                  <Font name="System Bold Italic" size="22.0" />
-               </font>
-            </Label>
-            <Label layoutX="29.0" layoutY="86.0" text="Trail Name " textFill="#14f00d">
+            <Button fx:id="savebtn" layoutX="11.0" layoutY="549.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Save" />
+            <Button fx:id="addbtn" layoutX="525.0" layoutY="250.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="ADD" />
+            <Label layoutX="314.0" layoutY="15.0" text="Trail Name " textFill="#14f00d">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <Label layoutX="29.0" layoutY="127.0" text="Trail Head " textFill="#4bff03">
+            <TextField fx:id="trailnamefld" layoutX="430.0" layoutY="15.0" promptText="Trail" />
+            <Label layoutX="322.0" layoutY="108.0" text="Trail Head " textFill="#4bff03">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
-            <Label layoutX="25.0" layoutY="179.0" text="Length" textFill="#08e800">
+            <TextField fx:id="trailheadfld" layoutX="430.0" layoutY="108.0" promptText="Head Address" />
+            <Label layoutX="334.0" layoutY="157.0" text="Length" textFill="#08e800">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
-            <Label layoutX="25.0" layoutY="234.0" text="Difficulty " textFill="#09ff00">
+            <TextField fx:id="lenghtfld" layoutX="430.0" layoutY="157.0" promptText="In miles" />
+            <Label layoutX="324.0" layoutY="65.0" text="Difficulty " textFill="#09ff00">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
-            <Label layoutX="33.0" layoutY="273.0" text="Type" textFill="#37ff00">
+            <TextField fx:id="diffcultfld" layoutX="430.0" layoutY="65.0" promptText="Hard,Medium,Easy" />
+            <Label layoutX="344.0" layoutY="207.0" text="Type" textFill="#37ff00">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
-            <TextField fx:id="trailnamefld" layoutX="146.0" layoutY="86.0" promptText="Trail" />
-            <TextField fx:id="trailheadfld" layoutX="146.0" layoutY="127.0" promptText="Head Address" />
-            <TextField fx:id="lenghtfld" layoutX="146.0" layoutY="179.0" promptText="In miles" />
-            <TextField fx:id="diffcultfld" layoutX="146.0" layoutY="234.0" promptText="Hard,Medium,Easy" />
-            <TextField fx:id="typefld" layoutX="139.0" layoutY="273.0" prefHeight="25.0" prefWidth="162.0" promptText="type" />
-            <Button fx:id="logout" layoutX="124.0" layoutY="549.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Logout" />
-            <Button layoutX="98.0" layoutY="361.0" mnemonicParsing="false" text="new ADD" />
+            <TextField fx:id="typefld" layoutX="427.0" layoutY="207.0" prefHeight="25.0" prefWidth="154.0" promptText="type" />
+            <Button fx:id="logbtn" layoutX="519.0" layoutY="549.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Logout" />
+            <Label layoutX="11.0" layoutY="15.0" text="New Trail" textFill="#00c8ff">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="266.0" text="Your New Trails:" textFill="#1cb3f3">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-   </center>
+   </bottom>
 </BorderPane>
