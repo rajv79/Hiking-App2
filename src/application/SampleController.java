@@ -87,11 +87,11 @@ public class SampleController implements Initializable{ //-----
 		 }
 	 }
 	 
-	 private String getuserpassword(String Username) {
+	  /*private String getuserpassword(String Username) {
 		 User user = (repository.getUsers().fetch(Username));
 		 
 		 return"";
-		 }
+		 }*/
 	 
 	/********************************************NEW Register login page********************************************************/
 	 
@@ -113,7 +113,7 @@ public class SampleController implements Initializable{ //-----
 			 
 			 Parent parent = loader.load(); // --------------seating up for next screen
 			 TrailHistoryController controller = loader.getController(); /// this will also change according to the scene required
-			 controller.setData(repository);
+			 //controller.setData(repository);
 			 Scene scene = new Scene(parent);
 			 Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); ////here the line will change according the eventname given as parameter for the event
 			 window.setScene(scene);
@@ -137,7 +137,7 @@ public class SampleController implements Initializable{ //-----
 			 
 			 Parent parent = loader.load(); // --------------seating up for next screen
 			 RegisterNowController controller = loader.getController();
-			 //controller.setData(repository);
+			 controller.setData(repository);
 			 Scene scene = new Scene(parent);
 			 Stage window = (Stage)((Node)event2.getSource()).getScene().getWindow();
 			 window.setScene(scene);
