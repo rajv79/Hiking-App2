@@ -38,6 +38,8 @@ public class RegisterNowController implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+		
 		// TODO Auto-generated method stub
 		String nfirstname = firstnamefld.getText();
 		String nlastname = lastnamefld.getText();
@@ -45,8 +47,10 @@ public class RegisterNowController implements Initializable {
 		String newusername = Nusernamefld.getText();
 		String newpassword = Npaswordfld.getText();
 
+		
 		System.out.println("Register Now");
 		savebtn.setOnAction((event) -> {
+			
 			save(event);
 		});
 		log.setOnAction((event) -> {
@@ -61,11 +65,23 @@ public class RegisterNowController implements Initializable {
 	// User user = new
 	// User(nfirstname,nlastname,nphonenumber,newusername,newpassword,history);
 	// repository.getUsers().insert(user);
+	
+	
+	
 	public void setData(Repository repository) {
 		this.repository = repository;
 	}
 
 	private void save(Event event) {
+		String nfirstname = firstnamefld.getText();
+		String nlastname = lastnamefld.getText();
+		String nphonenumber = pnumberfld.getText();
+		String newusername = Nusernamefld.getText();
+		String newpassword = Npaswordfld.getText();
+		
+		User user = new User(newusername,newpassword,nfirstname,nlastname,nphonenumber, 0);
+		repository.setCurrentUser(user);
+		repository.getUsers().insert(user);// this will add users in repo
 		try {
 
 			FXMLLoader loader = new FXMLLoader();
@@ -77,7 +93,7 @@ public class RegisterNowController implements Initializable {
 
 			Parent parent = loader.load(); // --------------seating up for next screen
 			TrailHistoryController controller = loader.getController();
-			// controller.setData(repository);
+			controller.setData(repository);
 			Scene scene = new Scene(parent);
 			Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 			window.setScene(scene);
@@ -98,7 +114,7 @@ public class RegisterNowController implements Initializable {
 
 			Parent parent = loader.load(); // --------------seating up for next screen
 			SampleController controller = loader.getController();
-			// controller.setData(repository);
+			controller.setData(repository);
 			Scene scene = new Scene(parent);
 			Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 			window.setScene(scene);

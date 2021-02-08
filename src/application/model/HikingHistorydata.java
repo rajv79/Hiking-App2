@@ -10,7 +10,7 @@ public class HikingHistorydata {
 		h.next = null;
 	}
 
-	public boolean insert(User newListing) {
+	public boolean insert(HikingHistory newListing) {
 		Node n = new Node();
 
 		Node q = h;// This will point to the duumy node ;
@@ -20,7 +20,7 @@ public class HikingHistorydata {
 
 			return false;// this will check if n has some value or not
 		else {
-			while (p != null && p.l.compareTo(newListing.getname()) < 0) {// this line will help to check the the new
+			while (p != null && p.l.compareTo(newListing.getTrail_name()) < 0) {// this line will help to check the the new
 																			// insert string is biiger or smaller then
 																			// the old one
 
@@ -43,7 +43,7 @@ public class HikingHistorydata {
 		}
 	}
 
-	public User fetch(String targetKey)
+	public HikingHistory fetch(String targetKey)
 
 	{
 		Node q = h;// this will point to the dummy node
@@ -77,7 +77,7 @@ public class HikingHistorydata {
 			return false;
 	}
 
-	public boolean update(String targetKey, User newListing) {
+	public boolean update(String targetKey, HikingHistory newListing) {
 		if (delete(targetKey) == false)
 			return false;
 		else if (insert(newListing) == false)
@@ -86,7 +86,7 @@ public class HikingHistorydata {
 	}
 
 	public class Node {
-		private User l;
+		private HikingHistory l;
 		private Node next;
 		private Node back;
 
@@ -104,4 +104,29 @@ public class HikingHistorydata {
 		return r;
 	}
 
+	public HikingHistory[]toArray(){ // this method
+		
+		int size =0;
+		
+		Node next = h.next;
+		while (next != null) {
+			
+			size++;
+			
+			next = next.next;
+		}
+		HikingHistory[]history = new HikingHistory[size];
+		
+		 next = h.next;
+		  size =0;
+		  
+		while (next != null) {
+			
+			history[size++] = next.l;
+			
+			next = next.next;
+		}
+		return history;
+		
+	}
 }

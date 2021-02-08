@@ -6,8 +6,10 @@ import java.util.ResourceBundle;
 import application.SampleController;
 import application.model.HikingHistory;
 import application.model.HikingHistorydata;
+import application.model.Repository;
 import application.model.Trail;
 import application.model.Traildata;
+import application.model.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -41,7 +43,7 @@ public class TrailInformationController implements Initializable {
     @FXML
     private TextField trailheadfld;
     @FXML
-    private TextField lengthfld;
+    private TextField lenghtfld;
     @FXML
     private TextField typefld;
     @FXML
@@ -63,10 +65,23 @@ public class TrailInformationController implements Initializable {
     private TableColumn lengthcol;
     @FXML
     private TableColumn typecol;
+    @FXML
+    private TableColumn startdatecol;
+    
 
+    
+    
+    
+    
+    
+    
+    
+    
     private Traildata history;// import the data strcture
     private ObservableList<Trail> repo = FXCollections.observableArrayList();
 
+    private Repository repository;
+    
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
 
@@ -74,7 +89,10 @@ public class TrailInformationController implements Initializable {
         difficultycol.setCellValueFactory(new PropertyValueFactory<Trail, String>("diffculity_levels"));
         trailheadcol.setCellValueFactory(new PropertyValueFactory<Trail, String>("trail_Head_Address"));
         lengthcol.setCellValueFactory(new PropertyValueFactory<Trail, String>("length_miles"));
-
+        typecol.setCellValueFactory(new PropertyValueFactory<Trail,String>("type"));
+        
+        // def the start and starttime
+        
         FilteredList<Trail> flist = new FilteredList<>(repo, p -> true);
 
         SortedList<Trail> slist = new SortedList<>(flist);
@@ -105,7 +123,7 @@ public class TrailInformationController implements Initializable {
 
             Parent parent = loader.load(); // --------------seating up for next screen
             SampleController controller = loader.getController();
-            //controller.setData(repository);
+            controller.setData(repository);
             Scene scene = new Scene(parent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(scene);
@@ -115,9 +133,31 @@ public class TrailInformationController implements Initializable {
             e.printStackTrace();
         }
     }
+    
+    
+    
 
     private void addtrail(Event event) {
+    	
+    	 String ntrailname = trailnamefld.getText();
+    	    String ndifficulty =diffcultfld.getText();
+    	    String ntype = typefld.getText();
+    	    String nlenght = lenghtfld.getText();
+    	    String naddres = trailheadfld.getText();
+    	    String nstartdate = startdatefld.getText();
+    	    String nstarttime = starttimefld.getText();
+    	    String nfinshtime = finshtime.getText();
+    	    
+    	    
         try {
+        	Trail trail = new Trail("Trail_Name","Address",45,"hard","medium");
+        	repository.getTrails().insert(trail);
+        	repo.add(trail);
+        	
+        	//Trail trail = new Trail(ntrailname,naddres,nlenght,ndifficulty,ntype);
+    		//repository.setCurrenttrail(trail);
+    		//repository.gettrail().insert(trail);// this will add users in repo
+        	
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -125,6 +165,28 @@ public class TrailInformationController implements Initializable {
     }
 
     private void save(Event event) {
+    	
+    	 String nstartdatefld = startdatefld.getText();
+    	 String nstarttimefld = starttimefld.getText();
+    	 String nfinshtime = finshtime.getText();
+    	 String username = repository.getCurrentUser().getUsername();
+    	 
+    	 String trailname = "trailname";
+    	 double distance = 2.33;
+    	 
+    	 Trail trail = (Trail)newinfoview.getSelectionModel().getSelectedItem();// this will selected the trail
+    	 if(trail == null ) {
+    		 System.out.println("no Trail selected");
+    	 }
+    	 
+    	 else {
+    		 trailname = trail.getTrail_Name();
+    		 // a distance field
+    	 }
+    	 	
+    	 HikingHistory history = new HikingHistory(username,trailname,nstartdatefld,nstarttimefld,nfinshtime,2.3);
+    	repository.getHistories().insert(history);
+    	
         try {
 
             FXMLLoader loader = new FXMLLoader();
@@ -132,7 +194,7 @@ public class TrailInformationController implements Initializable {
 
             Parent parent = loader.load(); // --------------seating up for next screen
             TrailHistoryController controller = loader.getController();
-            //controller.setData(repository);
+            controller.setData(repository);
             Scene scene = new Scene(parent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(scene);
@@ -142,5 +204,9 @@ public class TrailInformationController implements Initializable {
             e.printStackTrace();
         }
     }
-
+    public void setData(Repository repository) {
+		this.repository = repository;
+		
+		
+	}
 }

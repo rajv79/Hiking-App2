@@ -35,12 +35,12 @@ public class SampleController implements Initializable{ //-----
 	@FXML
 	private Button registernow;
 	
-	private Repository repository = new Repository();
+	private Repository repository;
 	
 	//userdata data = new userdata();
 	
 	public void initialize(URL url,ResourceBundle bd) {
-		
+		wronglogin.setText("Test");
 		loginbtn.setOnAction((event)->{
 			System.out.println("button press here");
 			login(event);
@@ -63,35 +63,35 @@ public class SampleController implements Initializable{ //-----
 		 try {
 			 String username = usernamefld.getText();
 			 String password = passwordfld.getText();
-			// userdata.fetch(username);
-			 if(username.equals("vivek") && password.equals("vivek123")) {
+			 String found = getuserpassword(username);// check for the username and password
+			 if(found == null) {
+				 wronglogin.setText("username not found ");
+			 }
+			 else if(password.equals(found)) {
 				 wronglogin.setText("Success");
 				 
 				 changeView(event);
 			 }
 			 
-			 else if(username.isEmpty()&&password.isEmpty()) {
-				 wronglogin.setText("Please enter your Password or Username");
-				 
-			 
-				 
-			 }
+
 			 else {
-				 wronglogin.setText("Invalid Username or password");
+				 wronglogin.setText("Invalid  password");
 			 }
 			
 			 
 		 }
 		 catch(Exception e ){
-			 
+			 e.printStackTrace();
 		 }
 	 }
 	 
-	  /*private String getuserpassword(String Username) {
+	  private String getuserpassword(String Username) {
 		 User user = (repository.getUsers().fetch(Username));
-		 
-		 return"";
-		 }*/
+		 if(user!=null) {
+			 repository.setCurrentUser(user);// this will put the current user whenever they login
+		 }
+		 return (user==null)?null:user.getPassword() ;
+		 }
 	 
 	/********************************************NEW Register login page********************************************************/
 	 
@@ -109,11 +109,13 @@ public class SampleController implements Initializable{ //-----
 		 try {
 			
 			 FXMLLoader loader  =  new FXMLLoader();
-			 loader.setLocation(getClass().getResource("/application/view/TrailHistory.fxml"));//this pointing to next view/// and it will change other screen depending on the conditon
+			 //loader.setLocation(getClass().getResource("/application/view/TrailHistory.fxml"));//this pointing to next view/// and it will change other screen depending on the conditon
+			 
+			loader.setLocation(getClass().getResource("/application/view/AdminAlluser.fxml"));
 			 
 			 Parent parent = loader.load(); // --------------seating up for next screen
 			 TrailHistoryController controller = loader.getController(); /// this will also change according to the scene required
-			 //controller.setData(repository);
+			 controller.setData(repository);
 			 Scene scene = new Scene(parent);
 			 Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); ////here the line will change according the eventname given as parameter for the event
 			 window.setScene(scene);
@@ -150,5 +152,15 @@ public class SampleController implements Initializable{ //-----
 			 e.printStackTrace();
 		 }
 	 }
+
+
+
+
+
+	public void setData(Repository repository) {
+		this.repository = repository;
+		System.out.println(repository);
+		System.out.println(repository.getUsers().toString());
+	}
 	
 }

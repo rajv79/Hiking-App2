@@ -19,6 +19,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -27,7 +28,8 @@ import javafx.stage.Stage;
 
 public class TrailHistoryController implements Initializable {
 	
-	
+	@FXML
+	private Label titlelbl;
 	@FXML
     private TextField searchfld;
     @FXML
@@ -51,6 +53,8 @@ public class TrailHistoryController implements Initializable {
     private HikingHistorydata history;// import the data strcture
     private ObservableList<HikingHistory> repo = FXCollections.observableArrayList();
 
+    private Repository repository;
+    
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
 
@@ -60,6 +64,8 @@ public class TrailHistoryController implements Initializable {
 
         endtimecol.setCellValueFactory(new PropertyValueFactory<HikingHistory, String>("Time_finshed"));
         distancecol.setCellValueFactory(new PropertyValueFactory<HikingHistory, String>("distance"));
+        
+        
 
         FilteredList<HikingHistory> flist = new FilteredList<>(repo, p -> true);
 
@@ -81,8 +87,18 @@ public class TrailHistoryController implements Initializable {
 
     public void setData(Repository repository) {
 
+    	this.repository = repository;
+    	titlelbl.setText("History Page ("+ repository.getCurrentUser().getFirstname() + ")");
+    	HikingHistory[] list =  repository.getHistories().toArray();
+    	for (int i = 0; i < list.length; i++ ) {
+    		
+    		repo.add(list[i]);
+    	}
+    	
+    	// for checking the information
+    	
         for (int i = 0; i < 10; i++) {
-            HikingHistory h = new HikingHistory("name" + i, i, (10 * i), (10 * i), i, (100 * i));
+            HikingHistory h = new HikingHistory("username","name","sdate","stime","ftime",2.3);
             repo.add(h);
         }
     }
@@ -95,7 +111,7 @@ public class TrailHistoryController implements Initializable {
 
             Parent parent = loader.load(); // --------------seating up for next screen
             SampleController controller = loader.getController();
-            //controller.setData(repository);
+            controller.setData(repository);
             Scene scene = new Scene(parent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(scene);
@@ -114,7 +130,7 @@ public class TrailHistoryController implements Initializable {
 
             Parent parent = loader.load(); // --------------seating up for next screen
             TrailInformationController controller = loader.getController();
-            //controller.setData(repository);
+            controller.setData(repository);
             Scene scene = new Scene(parent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(scene);
@@ -124,5 +140,5 @@ public class TrailHistoryController implements Initializable {
             e.printStackTrace();
         }
     }
-
+   
 }

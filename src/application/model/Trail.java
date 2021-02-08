@@ -19,10 +19,10 @@ public class Trail {
 
 	}
 
-	public Trail(String Trail_Name, String trail_Head_Address, int length_miles, String diffculty_levels, String type) {
+	public Trail(String Trail_Name, String trail_Head_Address, int nlenght, String diffculty_levels, String type) {
 		this.Trail_Name = Trail_Name;
 		this.trail_Head_Address = trail_Head_Address;
-		this.length_miles = length_miles;
+		this.length_miles = nlenght;
 		this.diffculity_levels = diffculty_levels;
 		this.type = type;
 

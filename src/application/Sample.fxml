@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller = "application.SampleController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
    <left>
       <AnchorPane prefHeight="600.0" prefWidth="266.0" BorderPane.alignment="CENTER">
          <children>
@@ -79,10 +79,7 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label fx:id="wronglogin" layoutX="57.0" layoutY="136.0" prefHeight="17.0" prefWidth="0.0" textFill="#e51210">
-               <font>
-                  <Font size="15.0" />
-               </font></Label>
+            <Label fx:id="wronglogin" layoutX="28.0" layoutY="145.0" text="Label" textFill="#00ff15" />
          </children></AnchorPane>
    </right>
 </BorderPane>

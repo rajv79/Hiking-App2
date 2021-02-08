@@ -2,32 +2,34 @@ package application.model;
 
 public class HikingHistory {
 
+	private String username;
 	private String Trail_name;
-	private int date_started;
-	private int Time_Strated;
-	private int date_finshed;
-	private int Time_finshed;
+	private String date_started;
+	private String Time_Strated;
+	//private int date_finshed;
+	private String Time_finshed;
 	private double distance;
+	
 	
 
 	public HikingHistory() {
 		this.Trail_name = "";
-		this.date_started = 0;
-		this.Time_Strated = 0;
-		this.date_finshed = 0;
-		this.Time_finshed = 0;
-		this.distance = 0.0;
+		this.date_started = "";
+		this.Time_Strated = "";
+		//this.date_finshed = 0;
+		this.Time_finshed = "";
+		
 		
 
 	}
 
-	public HikingHistory(String Trail_name, int date_started, int Time_Started, int date_finshed, int Time_finshed,
+	public HikingHistory(String username,String Trail_name, String date_started, String Time_Started,  String Time_finshed,
 			double distance) {
 
 		this.Trail_name = Trail_name;
 		this.date_started = date_started;
 		this.Time_Strated = Time_Started;
-		this.date_finshed = date_finshed;
+		//this.date_finshed = date_finshed;
 		this.Time_finshed = Time_finshed;
 		
 		this.distance = distance;
@@ -36,17 +38,25 @@ public class HikingHistory {
 	}
 
 	public String toString() {
-		return ("Name of Trail:" + Trail_name + "Date started :- " + date_started + "Time_Started:-" + Time_Strated
-				+ "datefinshed:-" + date_finshed + "Ditance hike :-" + distance 
+		return ("Username : "+ username+ "Name of Trail:" + Trail_name + " +Date started :- " + date_started + "Time_Started:-" + Time_Strated
+				+ "Ditance hike :-" + distance 
 				);
 
 	}
 
 	public HikingHistory deepcopy() {
-		HikingHistory deepcopy = new HikingHistory(Trail_name, date_started, Time_Strated, date_finshed, Time_finshed,
+		HikingHistory deepcopy = new HikingHistory( username ,Trail_name, date_started, Time_Strated,  Time_finshed,
 				distance);
 		return deepcopy;
 
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public int compareTo(String targetKey) {
@@ -62,35 +72,29 @@ public class HikingHistory {
 		Trail_name = trail_name;
 	}
 
-	public int getDate_started() {
+	public String getDate_started() {
 		return date_started;
 	}
 
-	public void setDate_started(int date_started) {
+	public void setDate_started(String date_started) {
 		this.date_started = date_started;
 	}
 
-	public int getTime_Strated() {
+	public String getTime_Strated() {
 		return Time_Strated;
 	}
 
-	public void setTime_Strated(int time_Strated) {
+	public void setTime_Strated(String time_Strated) {
 		Time_Strated = time_Strated;
 	}
 
-	public int getDate_finshed() {
-		return date_finshed;
-	}
+	
 
-	public void setDate_finshed(int date_finshed) {
-		this.date_finshed = date_finshed;
-	}
-
-	public int getTime_finshed() {
+	public String getTime_finshed() {
 		return Time_finshed;
 	}
 
-	public void setTime_finshed(int time_finshed) {
+	public void setTime_finshed(String time_finshed) {
 		Time_finshed = time_finshed;
 	}
 
@@ -102,6 +106,7 @@ public class HikingHistory {
 		this.distance = distance;
 	}
 
+	
 	
 
 	

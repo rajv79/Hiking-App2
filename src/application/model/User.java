@@ -88,8 +88,14 @@ public class User {
 		history = hiking_history;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public String getPassword() {
+		return password;
+	}
+
+	@Override
+	public String toString() {
+		return "User [username=" + username + ", password=" + password + ", firstname=" + firstname + ", lastname="
+				+ lastname + ", phonenumber=" + phonenumber + ", history=" + history + "]";
 	}
 
 }
