@@ -4,7 +4,7 @@ public class Trail {
 
 	private String Trail_Name;
 	private String trail_Head_Address;
-	private int length_miles;
+	private String length_miles;
 	private int elevation_gain;
 	private String diffculity_levels;
 	private String type;
@@ -12,14 +12,14 @@ public class Trail {
 	public Trail() {
 		this.Trail_Name = "";
 		this.trail_Head_Address = "";
-		this.length_miles = 0;
+		this.length_miles = "";
 		this.elevation_gain = 0;
 		this.diffculity_levels = "";
 		this.type = "";
 
 	}
 
-	public Trail(String Trail_Name, String trail_Head_Address, int nlenght, String diffculty_levels, String type) {
+	public Trail(String Trail_Name, String trail_Head_Address, String nlenght, String diffculty_levels, String type) {
 		this.Trail_Name = Trail_Name;
 		this.trail_Head_Address = trail_Head_Address;
 		this.length_miles = nlenght;
@@ -60,11 +60,11 @@ public class Trail {
 		this.trail_Head_Address = trail_Head_Address;
 	}
 
-	public int getLength_miles() {
+	public String getLength_miles() {
 		return length_miles;
 	}
 
-	public void setLength_miles(int length_miles) {
+	public void setLength_miles(String length_miles) {
 		this.length_miles = length_miles;
 	}
 
