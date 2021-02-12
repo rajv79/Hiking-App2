@@ -8,7 +8,7 @@ public class HikingHistory {
 	private String Time_Strated;
 	//private int date_finshed;
 	private String Time_finshed;
-	private double distance;
+	private String distance;
 	
 	
 
@@ -20,12 +20,14 @@ public class HikingHistory {
 		this.Time_finshed = "";
 		
 		
+		
 
 	}
 
 	public HikingHistory(String username,String Trail_name, String date_started, String Time_Started,  String Time_finshed,
-			double distance) {
-
+			String distance) {
+		
+		this.username = username;
 		this.Trail_name = Trail_name;
 		this.date_started = date_started;
 		this.Time_Strated = Time_Started;
@@ -98,12 +100,19 @@ public class HikingHistory {
 		Time_finshed = time_finshed;
 	}
 
-	public double getDistance() {
+	public String getDistance() {
 		return distance;
 	}
 
-	public void setDistance(double distance) {
+	public void setDistance(String distance) {
 		this.distance = distance;
+	}
+	
+	
+	public boolean contains(String text) {
+		return toString().contains(text);
+		
+		
 	}
 
 	

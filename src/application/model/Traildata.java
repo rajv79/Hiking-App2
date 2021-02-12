@@ -1,5 +1,7 @@
 package application.model;
 
+import application.model.Userdata.Node;
+
 public class Traildata {
 
 	private int next;
@@ -70,5 +72,23 @@ public class Traildata {
 		else
 			return true;
 	}
+	
+		public Trail[]toArray(){ // this method
+		
+		
+		Trail[] trail = new Trail[next];
+		for(int i =0; i<next;i++) {
+			trail[i]=  data[i];
+			
+		}
+		
+		return trail;
+		
+		
+	}
+	
+	
+	
+	
 
 }

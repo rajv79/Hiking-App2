@@ -7,6 +7,7 @@ import application.SampleController;
 import application.model.HikingHistory;
 import application.model.HikingHistorydata;
 import application.model.Repository;
+import application.model.Trail;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -49,6 +50,8 @@ public class TrailHistoryController implements Initializable {
     private TableColumn endtimecol;
     @FXML
     private TableColumn distancecol;
+    @FXML
+    private Button deletebtn;
 
     private HikingHistorydata history;// import the data strcture
     private ObservableList<HikingHistory> repo = FXCollections.observableArrayList();
@@ -75,12 +78,27 @@ public class TrailHistoryController implements Initializable {
 
         historyview.setItems(slist);
 
+        searchfld.textProperty().addListener(obs->{
+        	String filter = searchfld.getText();
+        	if(filter== null||"".equals(filter.trim())) {
+        		flist.setPredicate(p-> true);
+        		
+        	}
+        	else {
+        		flist.setPredicate(p-> p.contains(filter));
+        	}
+        });
+        
         logoutbtn.setOnAction((event) -> {
             logout(event);
         });
 
         addtrailbtn.setOnAction((event) -> {
             addtrail(event);
+        });
+        
+        deletebtn.setOnAction((event)->{
+        	delete(event);
         });
 
     }
@@ -91,16 +109,18 @@ public class TrailHistoryController implements Initializable {
     	titlelbl.setText("History Page ("+ repository.getCurrentUser().getFirstname() + ")");
     	HikingHistory[] list =  repository.getHistories().toArray();
     	for (int i = 0; i < list.length; i++ ) {
-    		
-    		repo.add(list[i]);
+    		if(list[i].getUsername().equals(repository.getCurrentUser().getUsername())) {
+    			repo.add(list[i]);
+    		}
+    		//repo.add(list[i]);
     	}
     	
     	// for checking the information
     	
-        for (int i = 0; i < 10; i++) {
-            HikingHistory h = new HikingHistory("username","name","sdate","stime","ftime",2.3);
-            repo.add(h);
-        }
+        //for (int i = 0; i < 10; i++) {
+           // HikingHistory h = new HikingHistory("username","name","sdate","stime","ftime",2.3);
+           // repo.add(h);
+        //}
     }
 
     private void logout(Event event) {
@@ -139,6 +159,15 @@ public class TrailHistoryController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    
+    private void delete(Event event) {
+    	HikingHistory history= (HikingHistory)historyview.getSelectionModel().getSelectedItem();// this will selected the trail
+    	if(history!= null) {
+    		repo.remove(history);
+    		repository.getHistories().delete(history.getTrail_name());
+    	}
+    	
     }
    
 }

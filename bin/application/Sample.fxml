@@ -15,29 +15,37 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
    <left>
-      <AnchorPane prefHeight="600.0" prefWidth="266.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="600.0" prefWidth="332.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="236.0" fitWidth="294.0" layoutX="2.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="600.0" fitWidth="323.0" layoutX="-3.0" layoutY="-4.0">
+            <ImageView fitHeight="600.0" fitWidth="357.0" layoutX="-3.0" layoutY="-4.0">
                <image>
                   <Image url="@../../../../Desktop/logofor%20hinking.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="606.0" fitWidth="342.0" layoutX="1.0" layoutY="-3.0">
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="33.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="600.0" fitWidth="304.0">
                <image>
-                  <Image url="@../../../../Desktop/Resgisterllogo.jpg" />
+                  <Image url="@../../../../Desktop/HikingLogin1.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="600.0" fitWidth="335.0" layoutX="-2.0" layoutY="2.0">
+               <image>
+                  <Image url="@../../../../Desktop/ICONS%20FOR%20HIKING%20APP/HikingLogin1.jpg" />
                </image>
             </ImageView>
          </children></AnchorPane>
    </left>
    <right>
-      <AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: Light Blue;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="600.0" prefWidth="380.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="usernamefld" layoutX="147.0" layoutY="218.0" prefHeight="25.0" prefWidth="165.0" promptText="username" />
-            <PasswordField fx:id="passwordfld" layoutX="148.0" layoutY="313.0" prefHeight="25.0" prefWidth="164.0" promptText="password" />
-            <Button fx:id="registernow" layoutX="92.0" layoutY="403.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Registor Now" />
-            <Button fx:id="loginbtn" layoutX="221.0" layoutY="403.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Login" />
-            <Label layoutX="18.0" layoutY="211.0" prefHeight="40.0" prefWidth="118.0" text="Username">
+            <TextField fx:id="usernamefld" layoutX="180.0" layoutY="360.0" prefHeight="25.0" prefWidth="165.0" promptText="username" style="-fx-background-color: white;">
+               <font>
+                  <Font size="13.0" />
+               </font></TextField>
+            <PasswordField fx:id="passwordfld" layoutX="181.0" layoutY="429.0" prefHeight="25.0" prefWidth="164.0" promptText="password" />
+            <Button fx:id="registernow" layoutX="57.0" layoutY="518.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Registor Now" />
+            <Button fx:id="loginbtn" layoutX="240.0" layoutY="518.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Login" />
+            <Label layoutX="23.0" layoutY="355.0" prefHeight="40.0" prefWidth="118.0" text="Username">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
@@ -51,14 +59,14 @@
                         </Stop>
                         <Stop offset="1.0">
                            <color>
-                              <Color red="0.852006196975708" green="1.0" blue="0.01337448600679636" />
+                              <Color red="0.019999999552965164" green="0.45723095536231995" blue="1.0" />
                            </color>
                         </Stop>
                      </stops>
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label layoutX="18.0" layoutY="310.0" prefHeight="30.0" prefWidth="106.0" text="Password">
+            <Label layoutX="29.0" layoutY="426.0" prefHeight="30.0" prefWidth="106.0" text="Password">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
@@ -72,14 +80,44 @@
                         </Stop>
                         <Stop offset="1.0">
                            <color>
-                              <Color red="0.13281983137130737" green="0.890350878238678" blue="0.1454453468322754" />
+                              <Color red="0.019999999552965164" green="0.5891541838645935" blue="1.0" />
                            </color>
                         </Stop>
                      </stops>
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label fx:id="wronglogin" layoutX="28.0" layoutY="145.0" text="Label" textFill="#00ff15" />
+            <Label fx:id="wronglogin" layoutX="24.0" layoutY="300.0" text="Welcome To Extreme Hiking">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.34533899088027115">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.11180000007152557" green="0.8600000143051147" blue="0.5823025703430176" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="0.019999999552965164" blue="0.019999999552965164" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill></Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="247.0" fitWidth="392.0" layoutX="-15.0" layoutY="1.0">
+               <image>
+                  <Image url="@../../../../Desktop/Locklogin.jfif" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="266.0" fitWidth="384.0" layoutY="2.0">
+               <image>
+                  <Image url="@../../../../Desktop/ICONS%20FOR%20HIKING%20APP/Locklogin.jfif" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
    </right>
 </BorderPane>

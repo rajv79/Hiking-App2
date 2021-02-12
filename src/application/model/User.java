@@ -6,7 +6,7 @@ public class User {
 	private String password;
 	private String firstname;
 	private String lastname;
-	private int phonenumber;
+	private String phonenumber;
 	private String history; // history simple
 
 	public User() {
@@ -15,11 +15,11 @@ public class User {
 		this.password = "";
 		this.firstname = "";
 		this.lastname = "";
-		this.phonenumber = 0;
+		this.phonenumber = "";
 
 	}
 
-	public User(String username, String password, String firstname, String lastname, String history, int phonenumber) {
+	public User(String username, String password, String firstname, String lastname, String phonenumber,String history) {
 		this.username = username;
 		this.password = password;
 		this.firstname = firstname;
@@ -35,7 +35,7 @@ public class User {
 
 	// }
 	public User deepcopy() {
-		User deepcopy = new User(username, password, firstname, lastname, history, phonenumber);
+		User deepcopy = new User(username, password, firstname, lastname, phonenumber, history);
 		return deepcopy;
 
 	}
@@ -72,11 +72,11 @@ public class User {
 		this.lastname = lastname;
 	}
 
-	public int getPhonenumber() {
+	public String getPhonenumber() {
 		return phonenumber;
 	}
 
-	public void setPhonenumber(int phonenumber) {
+	public void setPhonenumber(String phonenumber) {
 		this.phonenumber = phonenumber;
 	}
 

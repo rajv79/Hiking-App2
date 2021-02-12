@@ -3,6 +3,7 @@ package application;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import application.controller.AdminAllUserController;
 import application.controller.RegisterNowController;
 import application.controller.TrailHistoryController;
 import application.controller.TrailInformationController;
@@ -34,13 +35,17 @@ public class SampleController implements Initializable{ //-----
 	private Label wronglogin;
 	@FXML
 	private Button registernow;
+	@FXML
+	private Button adminbtn;
 	
 	private Repository repository;
 	
 	//userdata data = new userdata();
 	
 	public void initialize(URL url,ResourceBundle bd) {
+		
 		wronglogin.setText("Test");
+		
 		loginbtn.setOnAction((event)->{
 			System.out.println("button press here");
 			login(event);
@@ -50,6 +55,9 @@ public class SampleController implements Initializable{ //-----
 			System.out.println("registernow press here");
 			register(event2);
 		});
+		
+		
+		
 		
 	}
 	
@@ -70,7 +78,12 @@ public class SampleController implements Initializable{ //-----
 			 else if(password.equals(found)) {
 				 wronglogin.setText("Success");
 				 
+				 if(username.equals("Admin")) {
+					 changeView3(event);
+				 }
+				 else {
 				 changeView(event);
+				 }
 			 }
 			 
 
@@ -100,7 +113,11 @@ public class SampleController implements Initializable{ //-----
 		 changeview2(event2);
 	 }
 	 
+	 /***************************  Admin Page login  *****************************************************************/
+	 
+	
 	 /*****************************************************Login Page to Trail info page *******************************************************************************/
+	 
 	 
 	 
 	 
@@ -109,11 +126,14 @@ public class SampleController implements Initializable{ //-----
 		 try {
 			
 			 FXMLLoader loader  =  new FXMLLoader();
-			 //loader.setLocation(getClass().getResource("/application/view/TrailHistory.fxml"));//this pointing to next view/// and it will change other screen depending on the conditon
+			loader.setLocation(getClass().getResource("/application/view/TrailHistory.fxml"));//this pointing to next view/// and it will change other screen depending on the conditon
 			 
-			loader.setLocation(getClass().getResource("/application/view/AdminAlluser.fxml"));
+			//loader.setLocation(getClass().getResource("/application/view/AdminAlluser.fxml"));
 			 
 			 Parent parent = loader.load(); // --------------seating up for next screen
+			 
+			 //AdminAllUserController controller = loader.getController();
+			 
 			 TrailHistoryController controller = loader.getController(); /// this will also change according to the scene required
 			 controller.setData(repository);
 			 Scene scene = new Scene(parent);
@@ -152,6 +172,41 @@ public class SampleController implements Initializable{ //-----
 			 e.printStackTrace();
 		 }
 	 }
+	 
+	 
+	 
+	 	private void changeView3(Event event) { // this method is used to change scene from one to another
+		 
+		 try {
+			
+			 FXMLLoader loader  =  new FXMLLoader();
+			 
+			 
+			loader.setLocation(getClass().getResource("/application/view/AdminAllUser.fxml"));
+			 
+			 Parent parent = loader.load(); // --------------seating up for next screen
+			 
+			 AdminAllUserController controller = loader.getController();
+			 
+			 //TrailHistoryController controller = loader.getController(); /// this will also change according to the scene required
+			 controller.setData(repository);
+			 Scene scene = new Scene(parent);
+			 Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); ////here the line will change according the eventname given as parameter for the event
+			 window.setScene(scene);
+			 window.show();
+			 
+		 }
+		 catch(Exception e ){
+			 e.printStackTrace();
+		 }
+		 
+		 
+		 
+		 
+	 }
+	  
+	  
+	 
 
 
 

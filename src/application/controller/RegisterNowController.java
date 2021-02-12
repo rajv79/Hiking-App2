@@ -79,7 +79,7 @@ public class RegisterNowController implements Initializable {
 		String newusername = Nusernamefld.getText();
 		String newpassword = Npaswordfld.getText();
 		
-		User user = new User(newusername,newpassword,nfirstname,nlastname,nphonenumber, 0);
+		User user = new User(newusername,newpassword,nfirstname,nlastname,nphonenumber, newpassword); // check here the constrctutre
 		repository.setCurrentUser(user);
 		repository.getUsers().insert(user);// this will add users in repo
 		try {

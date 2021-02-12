@@ -5,94 +5,171 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.TrailInformationController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="672.0" prefWidth="800.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.TrailInformationController">
    <center>
       <AnchorPane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
    </center>
-   <bottom>
-      <AnchorPane fx:id="fishtimefld" prefHeight="600.0" prefWidth="674.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+   <top>
+      <AnchorPane fx:id="fishtimefld" prefHeight="673.0" prefWidth="800.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="25.0" layoutY="8.0" textFill="#e7ff00">
                <font>
                   <Font name="System Bold" size="28.0" />
                </font>
             </Label>
-            <Label layoutX="16.0" layoutY="80.0" text="Start Date" textFill="#ddff00">
+            <Label layoutX="502.0" layoutY="138.0" text="Start Date" textFill="#00ffe9">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="17.0" layoutY="135.0" text="Start Time" textFill="#c5fb00">
+            <Label layoutX="505.0" layoutY="191.0" text="Start Time" textFill="#00facd">
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="5.0" layoutY="186.0" text="Finshed Time" textFill="#c3ff00">
+            <Label layoutX="499.0" layoutY="248.0" text="Finshed Time" textFill="#00ffd6">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="startdatefld" layoutX="119.0" layoutY="78.0" promptText="startdate" />
-            <TextField fx:id="starttimefld" layoutX="119.0" layoutY="132.0" promptText="start time" />
-            <TextField fx:id="finshtime" layoutX="119.0" layoutY="184.0" promptText="finshed time" />
-            <TableView fx:id="newinfoview" layoutX="11.0" layoutY="300.0" prefHeight="233.0" prefWidth="460.0">
+            <TextField fx:id="startdatefld" layoutX="636.0" layoutY="136.0" promptText="start date" />
+            <TextField fx:id="starttimefld" layoutX="637.0" layoutY="191.0" promptText="start time" />
+            <TextField fx:id="finshtime" layoutX="636.0" layoutY="246.0" promptText="finshed time" />
+            <TableView fx:id="newinfoview" layoutX="10.0" layoutY="359.0" prefHeight="233.0" prefWidth="490.0" style="-fx-background-color: pink;">
               <columns>
-                <TableColumn fx:id="trailnamecol" prefWidth="75.0" text="Trailname" />
-                <TableColumn fx:id="difficultycol" prefWidth="75.0" text="difficulty" />
-                  <TableColumn fx:id="trailheadcol" prefWidth="75.0" text="Trailhead" />
-                  <TableColumn fx:id="lengthcol" prefWidth="75.0" text="length" />
-                  <TableColumn fx:id="typecol" prefWidth="75.0" text="type" />
-                  <TableColumn fx:id="startdatecol" prefWidth="75.0" text="startdate" />
+                <TableColumn fx:id="trailnamecol" prefWidth="79.55554580688477" text="Trail Name" />
+                <TableColumn fx:id="difficultycol" prefWidth="59.11114501953125" text="Difficulty" />
+                  <TableColumn fx:id="trailheadcol" prefWidth="142.22222900390625" text="Trail Head" />
+                  <TableColumn fx:id="lengthcol" prefWidth="63.111083984375" text="Length" />
+                  <TableColumn fx:id="typecol" prefWidth="67.5555419921875" text="Type" />
+                  <TableColumn fx:id="startdatecol" prefWidth="78.66668701171875" text="Start Date" />
               </columns>
             </TableView>
-            <Button fx:id="savebtn" layoutX="11.0" layoutY="549.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Save" />
-            <Button fx:id="addbtn" layoutX="525.0" layoutY="250.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="ADD" />
-            <Label layoutX="314.0" layoutY="15.0" text="Trail Name " textFill="#14f00d">
+            <Label layoutX="506.0" layoutY="302.0" text="Trail Name " textFill="#0ef0b7">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <TextField fx:id="trailnamefld" layoutX="430.0" layoutY="15.0" promptText="Trail" />
-            <Label layoutX="322.0" layoutY="108.0" text="Trail Head " textFill="#4bff03">
+            <TextField fx:id="trailnamefld" layoutX="639.0" layoutY="303.0" prefHeight="25.0" prefWidth="143.0" promptText="Trail" />
+            <Label layoutX="512.0" layoutY="432.0" text="Trail Address" textFill="#05ffb8">
                <font>
-                  <Font size="17.0" />
+                  <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <TextField fx:id="trailheadfld" layoutX="430.0" layoutY="108.0" promptText="Head Address" />
-            <Label layoutX="334.0" layoutY="157.0" text="Length" textFill="#08e800">
+            <TextField fx:id="trailheadfld" layoutX="637.0" layoutY="433.0" promptText="Head Address" />
+            <Label layoutX="518.0" layoutY="502.0" text="Length" textFill="#00cbe3">
                <font>
-                  <Font size="17.0" />
+                  <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <TextField fx:id="lenghtfld" layoutX="430.0" layoutY="157.0" promptText="In miles" />
-            <Label layoutX="324.0" layoutY="65.0" text="Difficulty " textFill="#09ff00">
+            <TextField fx:id="lenghtfld" layoutX="637.0" layoutY="502.0" promptText="In miles" />
+            <Label layoutX="506.0" layoutY="367.0" text="Difficulty " textFill="#00f7ff">
                <font>
-                  <Font size="17.0" />
+                  <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <TextField fx:id="diffcultfld" layoutX="430.0" layoutY="65.0" promptText="Hard,Medium,Easy" />
-            <Label layoutX="344.0" layoutY="207.0" text="Type" textFill="#37ff00">
+            <TextField fx:id="diffcultfld" layoutX="637.0" layoutY="367.0" promptText="Hard,Medium,Easy" />
+            <Label layoutX="525.0" layoutY="566.0" prefHeight="25.0" prefWidth="39.0" text="Type" textFill="#00ffd4">
                <font>
-                  <Font size="17.0" />
+                  <Font name="System Bold" size="17.0" />
                </font>
             </Label>
-            <TextField fx:id="typefld" layoutX="427.0" layoutY="207.0" prefHeight="25.0" prefWidth="154.0" promptText="type" />
-            <Button fx:id="logbtn" layoutX="519.0" layoutY="549.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Logout" />
-            <Label layoutX="11.0" layoutY="15.0" text="New Trail" textFill="#00c8ff">
+            <TextField fx:id="typefld" layoutX="637.0" layoutY="566.0" prefHeight="25.0" prefWidth="154.0" promptText="point to point ,circular,straight" />
+            <Label layoutX="546.0" layoutY="60.0" text="Add New Trails:">
                <font>
                   <Font name="System Bold" size="29.0" />
                </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.007630317419183458">
+                           <color>
+                              <Color red="0.8899999856948853" green="0.8472114205360413" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color green="1.0" blue="0.05260166898369789" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
             </Label>
-            <Label layoutX="10.0" layoutY="266.0" text="Your New Trails:" textFill="#1cb3f3">
+            <Label layoutX="109.0" layoutY="216.0" style="-fx-background-color: black;" text="Your New Trails:">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="System Bold" size="27.0" />
                </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.0076465590484282074">
+                           <color>
+                              <Color red="0.7701924443244934" green="0.8899999856948853" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color green="1.0" blue="0.46606308221817017" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
             </Label>
+            <ImageView fitHeight="135.0" fitWidth="285.0" layoutX="1.0" layoutY="1.0">
+               <image>
+                  <Image url="@../../../../../Desktop/ICONS%20FOR%20HIKING%20APP/New%20Trail.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="41.0" layoutY="295.0" prefHeight="17.0" prefWidth="389.0" text="Please Enter Start Date and Time  if you are selecting from Give trail:" textFill="#64ff00f7">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font></Label>
+            <Label layoutX="353.0" layoutY="14.0" text="Trail Info">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.07400000095367432" green="0.7400000095367432" blue="0.24050000309944153" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Button fx:id="addbtn" layoutX="715.0" layoutY="606.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="ADD" />
+            <Button fx:id="logbtn" layoutX="127.0" layoutY="608.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Logout" />
+            <Button fx:id="savebtn" layoutX="29.0" layoutY="608.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Save" />
          </children>
       </AnchorPane>
-   </bottom>
+   </top>
 </BorderPane>

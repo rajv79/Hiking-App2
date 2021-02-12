@@ -15,42 +15,155 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.RegisterNowController">
    <left>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="805.0" prefWidth="318.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="807.0" fitWidth="370.0" layoutX="-1.0" layoutY="-2.0">
+            <ImageView fitHeight="150.0" fitWidth="314.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="336.0" fitWidth="327.0">
                <image>
-                  <Image url="@../../../../../Desktop/Resgisterllogo.jpg" />
+                  <Image url="@../../../../../Desktop/Hikingregi.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="7.0" layoutY="336.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="230.0" fitWidth="328.0" layoutX="-1.0" layoutY="336.0">
+               <image>
+                  <Image url="@../../../../../Desktop/Hiking%20register2.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="50.0" layoutY="611.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="240.0" fitWidth="329.0" layoutX="-1.0" layoutY="565.0">
+               <image>
+                  <Image url="@../../../../../Desktop/Maphiking.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="319.0" fitWidth="336.0" layoutX="-2.0" layoutY="2.0">
+               <image>
+                  <Image url="@../../../../../Desktop/ICONS%20FOR%20HIKING%20APP/Hiking%20register2.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="243.0" fitWidth="332.0" layoutX="1.0" layoutY="321.0">
+               <image>
+                  <Image url="@../../../../../Desktop/ICONS%20FOR%20HIKING%20APP/Hikingregi.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="235.0" fitWidth="338.0" layoutX="-2.0" layoutY="566.0">
+               <image>
+                  <Image url="@../../../../../Desktop/ICONS%20FOR%20HIKING%20APP/Maphiking.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane prefHeight="791.0" prefWidth="440.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="600.0" prefWidth="440.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="9.0" layoutY="53.0" text="Join The Adventure Today !">
+            <Label layoutX="14.0" layoutY="54.0" text="Join The Adventure Today !">
                <font>
                   <Font name="Arial Black" size="28.0" />
                </font>
                <textFill>
-                  <LinearGradient endX="0.06567796610169489" endY="0.0783898229316129">
+                  <LinearGradient endX="0.12923729116633786" endY="0.49576271236953084" startX="0.9406779782246735">
                      <stops>
                         <Stop>
                            <color>
-                              <Color red="0.00660150870680809" green="0.11257310211658478" blue="0.011900088749825954" />
+                              <Color red="0.0949999988079071" green="0.5" blue="0.12355765700340271" />
                            </color>
                         </Stop>
                         <Stop offset="1.0">
                            <color>
-                              <Color red="0.46423181891441345" green="1.0" blue="0.05452674999833107" />
+                              <Color red="0.05999999865889549" green="1.0" blue="0.909013032913208" />
                            </color>
                         </Stop>
                      </stops>
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label layoutX="14.0" layoutY="167.0" text="First Name">
+            <Label layoutX="26.0" layoutY="166.0" text="First Name">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.2754237379057933" endY="0.37711866073689215" startX="0.330508450330314">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.05530000105500221" green="0.6575420498847961" blue="0.7900000214576721" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color green="1.0" blue="0.3149038553237915" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="27.0" layoutY="245.0" text="Last Name">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.2754237379057933" endY="0.37711866073689215" startX="0.330508450330314">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.05530000105500221" green="0.7900000214576721" blue="0.7458474040031433" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color green="1.0" blue="0.21875005960464478" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="18.0" layoutY="328.0" text="PhoneNumber">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.2754237379057933" endY="0.37711866073689215" startX="0.330508450330314">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.05530000105500221" green="0.7900000214576721" blue="0.5197857618331909" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color green="0.5365387201309204" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="30.0" layoutY="420.0" text="Username">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.2754237379057933" endY="0.37711866073689215" startX="0.330508450330314">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.05530000105500221" green="0.6292845010757446" blue="0.7900000214576721" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color green="1.0" blue="0.21346156299114227" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <TextField fx:id="firstnamefld" layoutX="204.0" layoutY="169.0" prefHeight="25.0" prefWidth="193.0" promptText="Firstname" />
+            <Label layoutX="32.0" layoutY="499.0" text="Password">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -64,111 +177,26 @@
                         </Stop>
                         <Stop offset="1.0">
                            <color>
-                              <Color red="0.949999988079071" green="1.0" />
+                              <Color green="0.9499998688697815" blue="1.0" />
                            </color>
                         </Stop>
                      </stops>
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label layoutX="14.0" layoutY="234.0" text="Last Name">
+            <TextField fx:id="lastnamefld" layoutX="201.0" layoutY="248.0" prefHeight="25.0" prefWidth="198.0" promptText="Last Name" />
+            <TextField fx:id="pnumberfld" layoutX="202.0" layoutY="331.0" prefHeight="25.0" prefWidth="196.0" promptText="Phone Number" />
+            <TextField fx:id="Nusernamefld" layoutX="199.0" layoutY="423.0" prefHeight="25.0" prefWidth="204.0" promptText="User Name" />
+            <PasswordField fx:id="Npaswordfld" layoutX="201.0" layoutY="502.0" prefHeight="25.0" prefWidth="198.0" promptText="6 character Long" />
+            <Button fx:id="savebtn" layoutX="119.0" layoutY="622.0" mnemonicParsing="false" style="-fx-background-color: Yellow;" text="Save">
                <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="0.2754237379057933" endY="0.37711866073689215" startX="0.330508450330314">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.05530000105500221" green="0.7900000214576721" blue="0.1877579391002655" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.949999988079071" green="1.0" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Label>
-            <Label layoutX="13.0" layoutY="302.0" text="PhoneNumber">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="0.2754237379057933" endY="0.37711866073689215" startX="0.330508450330314">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.05530000105500221" green="0.7900000214576721" blue="0.1877579391002655" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.949999988079071" green="1.0" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Label>
-            <Label layoutX="13.0" layoutY="385.0" text="Username">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="0.2754237379057933" endY="0.37711866073689215" startX="0.330508450330314">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.05530000105500221" green="0.7900000214576721" blue="0.1877579391002655" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.949999988079071" green="1.0" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Label>
-            <TextField fx:id="firstnamefld" layoutX="165.0" layoutY="169.0" prefHeight="25.0" prefWidth="193.0" promptText="Firstname" />
-            <Label layoutX="19.0" layoutY="475.0" text="Password">
-               <font>
-                  <Font size="20.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="0.2754237379057933" endY="0.37711866073689215" startX="0.330508450330314">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.05530000105500221" green="0.7900000214576721" blue="0.1877579391002655" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="0.949999988079071" green="1.0" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-            </Label>
-            <TextField fx:id="lastnamefld" layoutX="165.0" layoutY="236.0" prefHeight="25.0" prefWidth="198.0" promptText="Last Name" />
-            <TextField fx:id="pnumberfld" layoutX="163.0" layoutY="304.0" prefHeight="25.0" prefWidth="196.0" promptText="Phone Number" />
-            <TextField fx:id="Nusernamefld" layoutX="159.0" layoutY="387.0" prefHeight="25.0" prefWidth="204.0" promptText="User Name" />
-            <PasswordField fx:id="Npaswordfld" layoutX="164.0" layoutY="475.0" prefHeight="25.0" prefWidth="198.0" promptText="6 character Long" />
-            <Button fx:id="savebtn" layoutX="165.0" layoutY="585.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Save">
-               <font>
-                  <Font name="System Bold Italic" size="17.0" />
+                  <Font name="System Bold" size="17.0" />
                </font>
             </Button>
             <Label layoutX="67.0" layoutY="129.0" textFill="#fffb02" />
-            <Button fx:id="log" layoutX="254.0" layoutY="585.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="102.0" style="-fx-background-color: yellow;" text="LoginPage">
+            <Button fx:id="log" layoutX="240.0" layoutY="622.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="102.0" style="-fx-background-color: yellow;" text="LoginPage">
                <font>
-                  <Font name="System Bold Italic" size="14.0" />
+                  <Font name="System Bold" size="14.0" />
                </font>
             </Button>
          </children>

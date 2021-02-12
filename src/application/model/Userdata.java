@@ -1,5 +1,7 @@
 package application.model;
 
+import application.model.HikingHistorydata.Node;
+
 public class Userdata {
 
 	private Node h;
@@ -103,6 +105,32 @@ public class Userdata {
 			next = next.next;
 		}
 		return r;
+	}
+	
+public User[]toArray(){ // this method
+		
+		int size =0;
+		
+		Node next = h.next;
+		while (next != null) {
+			
+			size++;
+			
+			next = next.next;
+		}
+		User[]user = new User[size];
+		
+		 next = h.next;
+		  size =0;
+		  
+		while (next != null) {
+			//System.out.println(next.l);
+			user[size++] = next.l;
+			
+			next = next.next;
+		}
+		return user ;
+		
 	}
 
 }

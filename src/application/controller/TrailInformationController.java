@@ -90,6 +90,8 @@ public class TrailInformationController implements Initializable {
         trailheadcol.setCellValueFactory(new PropertyValueFactory<Trail, String>("trail_Head_Address"));
         lengthcol.setCellValueFactory(new PropertyValueFactory<Trail, String>("length_miles"));
         typecol.setCellValueFactory(new PropertyValueFactory<Trail,String>("type"));
+        //startdatecol.setCellValueFactory(new PropertyValueFactory<HikingHistory,String>("date_started"));
+        
         
         // def the start and starttime
         
@@ -150,13 +152,14 @@ public class TrailInformationController implements Initializable {
     	    
     	    
         try {
-        	Trail trail = new Trail("Trail_Name","Address",45,"hard","medium");
-        	repository.getTrails().insert(trail);
-        	repo.add(trail);
+        	//Trail trail = new Trail("Trail_Name","Address",45,"hard","medium");
+        	//repository.getTrails().insert(trail);
+        	//repo.add(trail);
         	
-        	//Trail trail = new Trail(ntrailname,naddres,nlenght,ndifficulty,ntype);
-    		//repository.setCurrenttrail(trail);
-    		//repository.gettrail().insert(trail);// this will add users in repo
+        	Trail trail = new Trail(ntrailname,naddres,nlenght,ndifficulty,ntype);
+        	repo.add(trail);
+    		//repository.setCurrentTrail(trail);
+    		repository.getTrails().insert(trail);// this will add users in repo
         	
 
         } catch (Exception e) {
@@ -169,10 +172,11 @@ public class TrailInformationController implements Initializable {
     	 String nstartdatefld = startdatefld.getText();
     	 String nstarttimefld = starttimefld.getText();
     	 String nfinshtime = finshtime.getText();
+    	 String ndistance = lenghtfld.getText();
     	 String username = repository.getCurrentUser().getUsername();
     	 
     	 String trailname = "trailname";
-    	 double distance = 2.33;
+    	 //double distance = 2.33;
     	 
     	 Trail trail = (Trail)newinfoview.getSelectionModel().getSelectedItem();// this will selected the trail
     	 if(trail == null ) {
@@ -184,7 +188,7 @@ public class TrailInformationController implements Initializable {
     		 // a distance field
     	 }
     	 	
-    	 HikingHistory history = new HikingHistory(username,trailname,nstartdatefld,nstarttimefld,nfinshtime,2.3);
+    	 HikingHistory history = new HikingHistory(username,trailname,nstartdatefld,nstarttimefld,nfinshtime,ndistance);
     	repository.getHistories().insert(history);
     	
         try {
@@ -206,6 +210,9 @@ public class TrailInformationController implements Initializable {
     }
     public void setData(Repository repository) {
 		this.repository = repository;
+		for(int i =0; i<repository.getTrails().toArray().length; i++) {
+			repo.add(repository.getTrails().toArray()[i]);
+		}
 		
 		
 	}
