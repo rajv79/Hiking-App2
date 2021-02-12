@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.paint.Color?>
@@ -11,14 +13,13 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.AdminAllUserController">
    <left>
-      <AnchorPane prefHeight="600.0" prefWidth="589.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="600.0" prefWidth="612.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="179.0" layoutY="34.0" text="WELCOME  ADMIN">
+            <Label layoutX="204.0" layoutY="20.0" text="WELCOME  ADMIN">
                <font>
-                  <Font name="System Bold" size="25.0" />
+                  <Font name="System Bold" size="34.0" />
                </font>
                <textFill>
                   <LinearGradient endX="1.0" endY="1.0">
@@ -37,7 +38,7 @@
                   </LinearGradient>
                </textFill>
             </Label>
-            <Label layoutX="38.0" layoutY="136.0" text="ALL USER">
+            <Label layoutX="24.0" layoutY="172.0" text="ALL USER INFO :">
                <textFill>
                   <LinearGradient endX="1.0" endY="1.0">
                      <stops>
@@ -58,18 +59,48 @@
                   <Font size="25.0" />
                </font>
             </Label>
-            <TableView fx:id="allview" layoutX="43.0" layoutY="210.0" prefHeight="318.0" prefWidth="468.0">
+            <TableView fx:id="allview" layoutX="14.0" layoutY="225.0" prefHeight="318.0" prefWidth="570.0" style="-fx-background-color: pink;">
               <columns>
-                <TableColumn fx:id="name" prefWidth="144.44452285766602" text="Name" />
-                <TableColumn fx:id="phnumber" prefWidth="163.5555419921875" text="Phon-Number" />
-                  <TableColumn fx:id="username" prefWidth="153.77777099609375" text="Username" />
+                <TableColumn fx:id="name" prefWidth="134.66669082641602" text="Name" />
+                <TableColumn fx:id="phnumber" prefWidth="260.0" text="Phon-Number" />
+                  <TableColumn fx:id="username" prefWidth="173.77786254882812" text="Username" />
               </columns>
             </TableView>
-            <Button fx:id="logbtn" layoutX="495.0" layoutY="553.0" mnemonicParsing="false" text="Logout" />
+            <Button fx:id="logbtn" layoutX="495.0" layoutY="553.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Logout">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.07999999821186066" green="0.42296740412712097" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.5136057138442993" green="0.04500000178813934" blue="0.8999999761581421" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill></Button>
          </children>
       </AnchorPane>
    </left>
    <right>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="600.0" prefWidth="220.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-14.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="210.0" fitWidth="201.0">
+               <image>
+                  <Image url="@../../../../../Desktop/imageadmins.jfif" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="391.0" fitWidth="204.0" layoutX="-1.0" layoutY="210.0">
+               <image>
+                  <Image url="@../../../../../Desktop/ICONS%20FOR%20HIKING%20APP/LockedImg.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
    </right>
 </BorderPane>
