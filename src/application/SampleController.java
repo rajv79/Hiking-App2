@@ -23,199 +23,189 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class SampleController implements Initializable{ //-----
-	
+public class SampleController implements Initializable { // -----
+
 	@FXML
 	private TextField usernamefld;
 	@FXML
 	private PasswordField passwordfld;
-	@FXML 
+	@FXML
 	private Button loginbtn;
-	@FXML 
+	@FXML
 	private Label wronglogin;
 	@FXML
 	private Button registernow;
 	@FXML
 	private Button adminbtn;
-	
+
 	private Repository repository;
-	
-	//userdata data = new userdata();
-	
-	public void initialize(URL url,ResourceBundle bd) {
-		
-		wronglogin.setText("Test");
-		
-		loginbtn.setOnAction((event)->{
+
+	// userdata data = new userdata();
+
+	public void initialize(URL url, ResourceBundle bd) {
+
+		wronglogin.setText("Welcome to Extreme Hiking ");
+
+		loginbtn.setOnAction((event) -> {
 			System.out.println("button press here");
 			login(event);
 		});
-		
-		registernow.setOnAction((event2)->{ // this code will help to take into new screen for registernow
+
+		registernow.setOnAction((event2) -> { // this code will help to take into new screen for registernow
 			System.out.println("registernow press here");
 			register(event2);
 		});
-		
-		
-		
-		
+
 	}
-	
-	
-	
-	
-	
-	/******************************************************Login Page username and passwrod**************************************************************/
-	
-	 private void login(Event event) { // is for the login to other page
-		 try {
-			 String username = usernamefld.getText();
-			 String password = passwordfld.getText();
-			 String found = getuserpassword(username);// check for the username and password
-			 if(found == null) {
-				 wronglogin.setText("username not found ");
-			 }
-			 else if(password.equals(found)) {
-				 wronglogin.setText("Success");
-				 
-				 if(username.equals("Admin")) {
-					 changeView3(event);
-				 }
-				 else {
-				 changeView(event);
-				 }
-			 }
-			 
 
-			 else {
-				 wronglogin.setText("Invalid  password");
-			 }
-			
-			 
-		 }
-		 catch(Exception e ){
-			 e.printStackTrace();
-		 }
-	 }
-	 
-	  private String getuserpassword(String Username) {
-		 User user = (repository.getUsers().fetch(Username));
-		 if(user!=null) {
-			 repository.setCurrentUser(user);// this will put the current user whenever they login
-		 }
-		 return (user==null)?null:user.getPassword() ;
-		 }
-	 
-	/********************************************NEW Register login page********************************************************/
-	 
-	 
-	 private void register(Event event2) {
-		 changeview2(event2);
-	 }
-	 
-	 /***************************  Admin Page login  *****************************************************************/
-	 
 	
-	 /*****************************************************Login Page to Trail info page *******************************************************************************/
+	 /************** Login Page username and passwrod**************************************************************/
 	 
+
+	private void login(Event event) { // is for the login to other page
+		try {
+			String username = usernamefld.getText();
+			String password = passwordfld.getText();
+			String found = getuserpassword(username);// check for the username and password
+			if (found == null) {
+				wronglogin.setText("username not found ");
+			} else if (password.equals(found)) {
+				wronglogin.setText("Success");
+
+				if (username.equals("Admin")) {
+					changeView3(event);
+				} else {
+					changeView(event);
+				}
+			}
+
+			else {
+				wronglogin.setText("Invalid  password");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	private String getuserpassword(String Username) {
+		User user = (repository.getUsers().fetch(Username));
+		if (user != null) {
+			repository.setCurrentUser(user);// this will put the current user whenever they login
+		}
+		return (user == null) ? null : user.getPassword();
+	}
+
+	
+	/******************************************** *NEW Register login page  ********************************************************/
+	
+
+	private void register(Event event2) {
+		changeview2(event2);
+	}
+
+	
+	/*************************** * Admin Page login *****************************************************************/
 	 
+
+	
+	 /****************************************************** Login Page to Trail info page***********************************/
 	 
-	 
-	 private void changeView(Event event) { // this method is used to change scene from one to another
-		 
-		 try {
-			
-			 FXMLLoader loader  =  new FXMLLoader();
-			loader.setLocation(getClass().getResource("/application/view/TrailHistory.fxml"));//this pointing to next view/// and it will change other screen depending on the conditon
-			 
-			//loader.setLocation(getClass().getResource("/application/view/AdminAlluser.fxml"));
-			 
-			 Parent parent = loader.load(); // --------------seating up for next screen
-			 
-			 //AdminAllUserController controller = loader.getController();
-			 
-			 TrailHistoryController controller = loader.getController(); /// this will also change according to the scene required
-			 controller.setData(repository);
-			 Scene scene = new Scene(parent);
-			 Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); ////here the line will change according the eventname given as parameter for the event
-			 window.setScene(scene);
-			 window.show();
-			 
-		 }
-		 catch(Exception e ){
-			 e.printStackTrace();
-		 }
-		 
-		 
-		 
-		 /*******************************************Login page to New Register page*******************************************/
-	 }
-	 
-	 private void changeview2(Event event2) {
-		 try {
-			 
-			 FXMLLoader loader  =  new FXMLLoader();
-			 loader.setLocation(getClass().getResource("/application/view/RegisterNow.fxml"));//this pointing to next view/// and it will change other screen depending on the conditon
-			 
-			 Parent parent = loader.load(); // --------------seating up for next screen
-			 RegisterNowController controller = loader.getController();
-			 controller.setData(repository);
-			 Scene scene = new Scene(parent);
-			 Stage window = (Stage)((Node)event2.getSource()).getScene().getWindow();
-			 window.setScene(scene);
-			 window.show();
-			 
-			 
-			 
-		 }
-		 catch(Exception e) {
-			 e.printStackTrace();
-		 }
-	 }
-	 
-	 
-	 
-	 	private void changeView3(Event event) { // this method is used to change scene from one to another
-		 
-		 try {
-			
-			 FXMLLoader loader  =  new FXMLLoader();
-			 
-			 
+
+	private void changeView(Event event) { // this method is used to change scene from one to another
+
+		try {
+
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(getClass().getResource("/application/view/TrailHistory.fxml"));// this pointing to next
+																								// view/// and it will
+																								// change other screen
+																								// depending on the
+																								// conditon
+
+			// loader.setLocation(getClass().getResource("/application/view/AdminAlluser.fxml"));
+
+			Parent parent = loader.load(); // --------------seating up for next screen
+
+			// AdminAllUserController controller = loader.getController();
+
+			TrailHistoryController controller = loader.getController(); /// this will also change according to the scene
+																		/// required
+			controller.setData(repository);
+			Scene scene = new Scene(parent);
+			Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow(); //// here the line will change
+																						//// according the eventname
+																						//// given as parameter for the
+																						//// event
+			window.setScene(scene);
+			window.show();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+
+		/*******************************************
+		 * Login page to New Register page
+		 *******************************************/
+	}
+
+	private void changeview2(Event event2) {
+		try {
+
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(getClass().getResource("/application/view/RegisterNow.fxml"));// this pointing to next
+																								// view/// and it will
+																								// change other screen
+																								// depending on the
+																								// conditon
+
+			Parent parent = loader.load(); // --------------seating up for next screen
+			RegisterNowController controller = loader.getController();
+			controller.setData(repository);
+			Scene scene = new Scene(parent);
+			Stage window = (Stage) ((Node) event2.getSource()).getScene().getWindow();
+			window.setScene(scene);
+			window.show();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void changeView3(Event event) { // this method is used to change scene from one to another
+
+		try {
+
+			FXMLLoader loader = new FXMLLoader();
+
 			loader.setLocation(getClass().getResource("/application/view/AdminAllUser.fxml"));
-			 
-			 Parent parent = loader.load(); // --------------seating up for next screen
-			 
-			 AdminAllUserController controller = loader.getController();
-			 
-			 //TrailHistoryController controller = loader.getController(); /// this will also change according to the scene required
-			 controller.setData(repository);
-			 Scene scene = new Scene(parent);
-			 Stage window = (Stage)((Node)event.getSource()).getScene().getWindow(); ////here the line will change according the eventname given as parameter for the event
-			 window.setScene(scene);
-			 window.show();
-			 
-		 }
-		 catch(Exception e ){
-			 e.printStackTrace();
-		 }
-		 
-		 
-		 
-		 
-	 }
-	  
-	  
-	 
 
+			Parent parent = loader.load(); // --------------seating up for next screen
 
+			AdminAllUserController controller = loader.getController();
 
+			// TrailHistoryController controller = loader.getController(); /// this will
+			// also change according to the scene required
+			controller.setData(repository);
+			Scene scene = new Scene(parent);
+			Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow(); //// here the line will change
+																						//// according the eventname
+																						//// given as parameter for the
+																						//// event
+			window.setScene(scene);
+			window.show();
 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
 
 	public void setData(Repository repository) {
 		this.repository = repository;
 		System.out.println(repository);
 		System.out.println(repository.getUsers().toString());
 	}
-	
+
 }

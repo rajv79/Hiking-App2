@@ -15,7 +15,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="946.0" style="-fx-background-color: brown;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.TrailHistoryController">
    <children>
-      <Label fx:id="titlelbl" layoutX="507.0" layoutY="25.0" text="Your History Page" textAlignment="CENTER">
+      <Label fx:id="titlelbl" layoutX="486.0" layoutY="22.0" text="Your History Page" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="28.0" />
          </font>
@@ -35,7 +35,7 @@
                </stops>
             </LinearGradient>
          </textFill></Label>
-      <Label layoutX="422.0" layoutY="91.0" text="Search ">
+      <Label layoutX="380.0" layoutY="123.0" text="Search ">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
@@ -55,17 +55,17 @@
                </stops>
             </LinearGradient>
          </textFill></Label>
-      <TextField fx:id="searchfld" layoutX="528.0" layoutY="95.0" prefHeight="27.0" prefWidth="389.0" promptText="search by name,date,time distance" style="-fx-background-color: grey;">
+      <TextField fx:id="searchfld" layoutX="498.0" layoutY="127.0" prefHeight="27.0" prefWidth="389.0" promptText="search by name,date,time distance" style="-fx-background-color: grey;">
          <font>
             <Font name="Bell MT" size="14.0" />
          </font></TextField>
-      <TableView fx:id="historyview" layoutX="397.0" layoutY="220.0" prefHeight="296.0" prefWidth="534.0" style="-fx-background-color: pink;">
+      <TableView fx:id="historyview" layoutX="342.0" layoutY="220.0" prefHeight="296.0" prefWidth="604.0" style="-fx-background-color: pink;">
         <columns>
-          <TableColumn fx:id="namecol" prefWidth="100.4444580078125" text="Trail Name" />
-          <TableColumn fx:id="startdatecol" prefWidth="109.77774047851562" text="Start date" />
-            <TableColumn fx:id="starttimecol" prefWidth="114.2222900390625" text="Start Time" />
-            <TableColumn fx:id="endtimecol" prefWidth="99.5555419921875" text="End Time" />
-            <TableColumn fx:id="distancecol" prefWidth="115.111083984375" text="Distance" />
+          <TableColumn fx:id="namecol" prefWidth="198.6666259765625" text="Trail Name" />
+          <TableColumn fx:id="startdatecol" prefWidth="77.3333740234375" text="Start date" />
+            <TableColumn fx:id="starttimecol" prefWidth="120.888916015625" text="Start Time" />
+            <TableColumn fx:id="endtimecol" prefWidth="88.0" text="End Time" />
+            <TableColumn fx:id="distancecol" prefWidth="119.5555419921875" text="Distance" />
         </columns>
       </TableView>
       <Button fx:id="addtrailbtn" layoutX="422.0" layoutY="543.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="AddTrail">
@@ -76,16 +76,15 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <ImageView fitHeight="173.0" fitWidth="182.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="600.0" fitWidth="220.0">
+      <ImageView fitHeight="600.0" fitWidth="326.0" opacity="0.75">
          <image>
-            <Image url="@../../../../../Desktop/A-Short-Hike-Review-GameSpot.jpg" />
+            <Image url="@../Img/cartoon-family-big-backpacks-green-park-people-hiking-nature-background-n-cartoon-family-big-backpacks-green-134766407.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="deletebtn" layoutX="868.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Delete" />
-      <ImageView fitHeight="608.0" fitWidth="397.0" layoutX="-4.0" layoutY="-3.0">
+      <Button fx:id="deletebtn" layoutX="811.0" layoutY="174.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Delete" />
+      <ImageView fitHeight="606.0" fitWidth="326.0" layoutY="-3.0">
          <image>
-            <Image url="@../../../../../Desktop/ICONS%20FOR%20HIKING%20APP/cartoon-family-big-backpacks-green-park-people-hiking-nature-background-n-cartoon-family-big-backpacks-green-134766407.jpg" />
+            <Image url="@../../Img/cartoon-family-big-backpacks-green-park-people-hiking-nature-background-n-cartoon-family-big-backpacks-green-134766407.jpg" />
          </image>
       </ImageView>
    </children>

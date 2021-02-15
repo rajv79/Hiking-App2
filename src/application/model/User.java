@@ -98,4 +98,10 @@ public class User {
 				+ lastname + ", phonenumber=" + phonenumber + ", history=" + history + "]";
 	}
 
+	public boolean contains(String text) {
+		return toString().contains(text);
+		
+		
+	}
+
 }

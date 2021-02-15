@@ -12,6 +12,9 @@ public class Repository {
 		 users = new Userdata();
 		 trails = new Traildata();
 		 histories = new HikingHistorydata();
+		 
+		 //Some default user and trails name for users and admin to check
+		 
 		 users.insert(new User("Admin","admin123","Raj","","63186833",""));
 		 users.insert(new User("Pin12","pin987","Pinki didi","","91256496",""));
 		 

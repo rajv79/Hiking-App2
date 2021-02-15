@@ -23,6 +23,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -38,8 +39,10 @@ public class AdminAllUserController implements Initializable {
 	private TableColumn phnumber;
 	@FXML
 	private TableColumn username;
+	@FXML
+	private TextField searchfld ;
 	
-	
+	// ..\Img\snoew forest.jpg
 	
 	
 	
@@ -59,8 +62,23 @@ public class AdminAllUserController implements Initializable {
 		FilteredList<User> flist = new FilteredList<>(repo,p->true);
 		SortedList<User>slist = new SortedList<>(flist);
 		slist.comparatorProperty().bind(allview.comparatorProperty());
+		
 		allview.setItems(slist);
 		
+		
+		
+		   searchfld.textProperty().addListener(obs->{
+        	String filter = searchfld.getText();
+        	if(filter== null||"".equals(filter.trim())) {
+        		flist.setPredicate(p-> true);
+        		
+        	}
+        	else {
+        		flist.setPredicate(p-> p.contains(filter));
+        	}
+        });
+        
+		 
 		
 		logbtn.setOnAction((event) -> {
 			logout(event);

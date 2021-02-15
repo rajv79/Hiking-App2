@@ -60,6 +60,8 @@ public class TrailHistoryController implements Initializable {
     
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
+    	
+    	// method for setting up the cells coloum name in the table view 
 
         namecol.setCellValueFactory(new PropertyValueFactory<HikingHistory, String>("Trail_name")); /// this will pull data from hikinghitory
         startdatecol.setCellValueFactory(new PropertyValueFactory<HikingHistory, String>("date_started"));
@@ -115,12 +117,7 @@ public class TrailHistoryController implements Initializable {
     		//repo.add(list[i]);
     	}
     	
-    	// for checking the information
     	
-        //for (int i = 0; i < 10; i++) {
-           // HikingHistory h = new HikingHistory("username","name","sdate","stime","ftime",2.3);
-           // repo.add(h);
-        //}
     }
 
     private void logout(Event event) {
